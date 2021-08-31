@@ -23,6 +23,7 @@ const Header = ({ children }) => {
   const {
     setCreateClassDialog,
     setJoinClassDialog,
+    setStudentClassDialog,
     loggedInUser,
     logout,
   } = useLocalContext();
@@ -30,6 +31,10 @@ const Header = ({ children }) => {
   const handleCreate = () => {
     handleClose();
     setCreateClassDialog(true);
+  };
+  const handleStudent = () => {
+    handleClose();
+    setStudentClassDialog(true);
   };
 
   const handleJoin = () => {
@@ -42,15 +47,17 @@ const Header = ({ children }) => {
         <Toolbar className={classes.toolbar}>
           <div className={classes.headerWrapper}>
             {children}
-            <img
+            {/* <img
               src="https://www.gstatic.com/images/branding/googlelogo/svg/googlelogo_clr_74x24px.svg"
               alt="Classroom"
-            />
+            /> */}
             <Typography variant="h6" className={classes.title}>
-              Classroom
+              HOWLERS
             </Typography>
           </div>
           <div className={classes.header__wrapper__right}>
+          {/* <button href="">Add Student</button> */}
+
             <Add onClick={handleClick} className={classes.icon} />
             <Apps className={classes.icon} />
             <Menu
@@ -62,6 +69,7 @@ const Header = ({ children }) => {
             >
               <MenuItem onClick={handleJoin}>Join Class</MenuItem>
               <MenuItem onClick={handleCreate}>Create Class</MenuItem>
+              <MenuItem onClick={handleStudent}>Add Student List </MenuItem>
             </Menu>
             <div>
               <Avatar
@@ -75,6 +83,7 @@ const Header = ({ children }) => {
       </AppBar>
       <CreateClass />
       <JoinClass />
+     
     </div>
   );
 };

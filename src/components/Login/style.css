@@ -1,5 +1,6 @@
 .login {
-  background-color: #0b7e43;
+  /* background-color: #0b7e43; */
+    background-color: black;
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -10,4 +11,10 @@
 .login__logo {
   object-fit: contain;
   height: 90vh;
+}
+
+.login__flex{
+  display: flex;
+  margin-bottom: 4.5rem;
+  gap: 1.5rem;
 }

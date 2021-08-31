@@ -1,6 +1,6 @@
 import { Button } from "@material-ui/core";
 import React from "react";
-import logo from "../../assets/logo.png";
+import logo from "../../assets/logo.jpg";
 import { useLocalContext } from "../../context/context";
 import "./style.css";
 const Login = () => {
@@ -10,10 +10,14 @@ const Login = () => {
   return (
     <div className="login">
       <img className="login__logo" src={logo} alt="Classroom" />
-
+      <div className="login__flex">
       <Button variant="contained" color="default" onClick={() => login()}>
-        Login Now!
+        Student Login!
       </Button>
+      <Button variant="contained" color="default" onClick={() => login()}>
+        Teachers Login!
+      </Button>
+      </div>
     </div>
   );
 };
